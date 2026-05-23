@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#6f5bd8" />
+  <meta name="description" content="HeartMend is a private, offline-first breakup coping PWA with no-contact support, grounding tools, journaling, and work-focus mode." />
+  <title>HeartMend</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">♡</div>
+        <div>
+          <strong>HeartMend</strong>
+          <span>steady steps after heartbreak</span>
+        </div>
+      </div>
+
+      <nav class="nav-list" id="navList">
+        <a href="#today" data-route="today">Today</a>
+        <a href="#calm" data-route="calm">Calm Now</a>
+        <a href="#nocontact" data-route="nocontact">No Contact</a>
+        <a href="#work" data-route="work">Work Mode</a>
+        <a href="#journal" data-route="journal">Journal</a>
+        <a href="#progress" data-route="progress">Progress</a>
+        <a href="#safety" data-route="safety">Safety</a>
+        <a href="#settings" data-route="settings">Settings</a>
+      </nav>
+
+      <div class="sidebar-card">
+        <p class="tiny-title">Tiny rule</p>
+        <p id="sidebarMantra">I only need to do the next kind thing.</p>
+      </div>
+    </aside>
+
+    <div class="content-wrap">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="menuButton" aria-label="Open navigation">☰</button>
+        <div>
+          <p class="eyebrow" id="todayDate"></p>
+          <h1 id="pageTitle">Today</h1>
+        </div>
+        <button class="ghost-button" id="installButton" hidden>Install app</button>
+      </header>
+
+      <main id="main" class="main" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+
+  <template id="modalTemplate">
+    <div class="modal-backdrop" role="presentation">
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-header">
+          <h2 id="modalTitle"></h2>
+          <button class="icon-button" data-close-modal aria-label="Close">×</button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </section>
+    </div>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
